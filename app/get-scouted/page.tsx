@@ -73,13 +73,13 @@ export default function GetScouted() {
   return (
     <main className="relative z-10 min-h-screen bg-black pt-28">
       <div className="mx-auto max-w-3xl px-5 pb-16 md:px-8">
-        <div className="mb-2 text-[11px] tracking-[0.28em] text-white/55">APPLICATION</div>
+        <div className="typo-eyebrow mb-2 text-white/55">APPLICATION</div>
 
-        <h1 className="font-serif text-[40px] leading-[1.06] md:text-[54px]">
+        <h1 className="typo-h1">
           Get scouted for The House of OROS Institute
         </h1>
 
-        <div className="mt-6 space-y-4 text-[15px] leading-[1.9] text-white/70">
+        <div className="typo-body mt-6 space-y-4 text-white/70">
           <p>
             Applying to The House of OROS Institute is an expression of interest in professional development,
             strategic guidance, and long-term growth.
@@ -94,7 +94,7 @@ export default function GetScouted() {
         </div>
 
         <div className="mt-10 rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8">
-          <div className="font-serif text-[22px]">Begin Application</div>
+          <div className="typo-h3">Begin Application</div>
 
           {/* Required acceptance */}
           <div className="mt-6 space-y-3 text-sm text-white/75">
@@ -150,7 +150,7 @@ export default function GetScouted() {
             />
 
             <div>
-              <div className="mb-2 text-[11px] tracking-[0.22em] text-white/55">
+              <div className="typo-eyebrow mb-2 text-white/55">
                 PRIMARY DISCIPLINE
               </div>
               <select
@@ -177,7 +177,7 @@ export default function GetScouted() {
             />
 
             <div>
-              <div className="mb-2 text-[11px] tracking-[0.22em] text-white/55">
+              <div className="typo-eyebrow mb-2 text-white/55">
                 WHY ARE YOU APPLYING?
               </div>
               <textarea
@@ -227,7 +227,7 @@ function Field({
 }) {
   return (
     <div>
-      <div className="mb-2 text-[11px] tracking-[0.22em] text-white/55">
+      <div className="typo-eyebrow mb-2 text-white/55">
         {label.toUpperCase()}
       </div>
       <input

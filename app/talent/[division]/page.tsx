@@ -51,10 +51,10 @@ export default async function DivisionPage({ params }: { params: Promise<{ divis
   return (
     <main className="min-h-screen bg-black pt-28">
       <div className="mx-auto max-w-6xl px-5 pb-16 md:px-8">
-        <div className="mb-2 text-[11px] tracking-[0.28em] text-white/55">TALENT DIVISION</div>
-        <h1 className="font-serif text-[44px] leading-[1.06] md:text-[60px]">{data.title}</h1>
+        <div className="typo-eyebrow mb-2 text-white/55">TALENT DIVISION</div>
+        <h1 className="typo-h1">{data.title}</h1>
 
-        <p className="mt-6 max-w-3xl whitespace-pre-line text-[15px] leading-[1.9] text-white/70">
+        <p className="typo-body mt-6 max-w-3xl whitespace-pre-line text-white/70">
           {data.body}
         </p>
 

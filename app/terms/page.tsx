@@ -2,10 +2,10 @@ export default function Terms() {
   return (
     <main className="min-h-screen bg-black pt-28">
       <div className="mx-auto max-w-3xl px-5 pb-16 md:px-8">
-        <div className="mb-2 text-[11px] tracking-[0.28em] text-white/55">POLICY</div>
-        <h1 className="font-serif text-[44px] leading-[1.06] md:text-[56px]">Terms & Conditions</h1>
+        <div className="typo-eyebrow mb-2 text-white/55">POLICY</div>
+        <h1 className="typo-h1">Terms & Conditions</h1>
 
-        <div className="mt-6 space-y-4 text-[15px] leading-[1.9] text-white/70">
+        <div className="typo-body mt-6 space-y-4 text-white/70">
           <p>
             The House of OROS Institute operates as a management and consulting institute. We do not operate as an employment agency, immigration consultancy, or guarantee placement, income, or visas.
           </p>

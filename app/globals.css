@@ -24,3 +24,40 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Typography scale — 6 levels for editorial hierarchy */
+.typo-hero {
+  font-family: var(--font-playfair);
+  font-size: 44px;
+  line-height: 1.05;
+}
+.typo-h1 {
+  font-family: var(--font-playfair);
+  font-size: 38px;
+  line-height: 1.05;
+}
+.typo-h2 {
+  font-family: var(--font-playfair);
+  font-size: 32px;
+  line-height: 1.1;
+}
+.typo-h3 {
+  font-family: var(--font-playfair);
+  font-size: 22px;
+  line-height: 1.15;
+}
+.typo-body {
+  font-size: 15px;
+  line-height: 1.9;
+}
+.typo-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+}
+
+@media (min-width: 768px) {
+  .typo-hero { font-size: 72px; }
+  .typo-h1  { font-size: 56px; }
+  .typo-h2  { font-size: 44px; }
+  .typo-h3  { font-size: 26px; }
+}

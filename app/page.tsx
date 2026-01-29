@@ -30,9 +30,9 @@ function SectionTitle({ eyebrow, title }: { eyebrow?: string; title: string }) {
   return (
     <div className="mb-8">
       {eyebrow ? (
-        <div className="mb-2 text-[11px] tracking-[0.22em] text-white/55">{eyebrow}</div>
+        <div className="typo-eyebrow mb-2 text-white/55">{eyebrow}</div>
       ) : null}
-      <h2 className="font-serif text-[34px] leading-[1.05] md:text-[44px]">{title}</h2>
+      <h2 className="typo-h2">{title}</h2>
     </div>
   );
 }
@@ -92,11 +92,11 @@ export default function HomePage() {
               transition={{ duration: 1.1 }}
               className="max-w-3xl"
             >
-              <div className="mb-4 text-[11px] tracking-[0.30em] text-white/60">
+              <div className="typo-eyebrow mb-4 text-white/60">
                 INSTITUTE • MANAGEMENT • CONSULTING
               </div>
 
-              <h1 className="font-serif text-[44px] leading-[1.02] md:text-[78px]">
+              <h1 className="typo-hero">
                 {heroCopy.heading}
               </h1>
 
@@ -104,7 +104,7 @@ export default function HomePage() {
                 {heroCopy.subheading}
               </div>
 
-              <p className="mt-6 max-w-2xl text-[15px] leading-[1.9] text-white/70">
+              <p className="typo-body mt-6 max-w-2xl text-white/70">
                 {heroCopy.subline}
               </p>
 
@@ -126,7 +126,7 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-12 md:gap-12 md:px-8 md:py-24">
           <div className="md:col-span-6">
             <SectionTitle title="About the House" />
-            <div className="space-y-5 text-[15px] leading-[1.9] text-white/70">
+            <div className="typo-body space-y-5 text-white/70">
               <p>
                 The House of OROS Institute is a private management and consulting institute dedicated to creatives
                 navigating complex global industries.
@@ -163,7 +163,7 @@ export default function HomePage() {
               ))}
             </div>
 
-            <div className="mt-6 text-[11px] tracking-[0.22em] text-white/50">
+            <div className="typo-eyebrow mt-6 text-white/50">
               EDITORIAL SELECTION • CLICK TO EXPAND
             </div>
           </div>
@@ -174,7 +174,7 @@ export default function HomePage() {
       <section id="talent" className="scroll-mt-24 border-t border-white/10 bg-black">
         <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
           <SectionTitle title="Talent Divisions" />
-          <p className="max-w-3xl text-[15px] leading-[1.9] text-white/70">
+          <p className="typo-body max-w-3xl text-white/70">
             The House of OROS Institute works across multiple creative disciplines. Applicants may explore the division that
             aligns most closely with their work.
           </p>
@@ -200,8 +200,8 @@ export default function HomePage() {
                 </div>
 
                 <div className="relative z-10 p-8">
-                  <div className="text-[11px] tracking-[0.22em] text-white/55">DIVISION</div>
-                  <div className="mt-2 font-serif text-[28px]">{d.title}</div>
+                  <div className="typo-eyebrow text-white/55">DIVISION</div>
+                  <div className="typo-h3 mt-2">{d.title}</div>
 
                   <div className="mt-6 flex items-center gap-4">
                     <Link
@@ -231,7 +231,7 @@ export default function HomePage() {
       <section id="institute" className="scroll-mt-24 border-t border-white/10 bg-black">
         <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
           <SectionTitle title="The Institute" />
-          <div className="mb-10 text-[12px] tracking-[0.22em] text-white/55">HOW WE WORK</div>
+          <div className="typo-eyebrow mb-10 text-white/55">HOW WE WORK</div>
 
           <div className="grid gap-5 md:grid-cols-3">
             {[
@@ -249,17 +249,17 @@ export default function HomePage() {
               },
             ].map((card) => (
               <div key={card.title} className="rounded-2xl border border-white/10 bg-white/5 p-8">
-                <div className="font-serif text-[22px]">{card.title}</div>
-                <p className="mt-4 text-[15px] leading-[1.9] text-white/70">{card.body}</p>
+                <div className="typo-h3">{card.title}</div>
+                <p className="typo-body mt-4 text-white/70">{card.body}</p>
               </div>
             ))}
           </div>
 
           <div className="mt-12 rounded-2xl border border-white/10 bg-white/5 p-8 md:p-10">
-            <div className="font-serif text-[22px] md:text-[26px]">
+            <div className="typo-h3">
               The Institute exists to build longevity, not visibility.
             </div>
-            <p className="mt-4 text-[15px] leading-[1.9] text-white/70">
+            <p className="typo-body mt-4 text-white/70">
               Our mission is to identify, develop, and position creative talent through intentional management, consulting, and professional development.
             </p>
 
@@ -270,7 +270,7 @@ export default function HomePage() {
               <div>• Build long-term careers, not short-term exposure</div>
             </div>
 
-            <p className="mt-6 text-[15px] leading-[1.9] text-white/70">
+            <p className="typo-body mt-6 text-white/70">
               We believe talent flourishes when paired with clarity, preparation, and aligned opportunity. The House of OROS Institute was created to be a container where that process can unfold with integrity.
             </p>
 
