@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const videos = ["/videos/home1.mov", "/videos/home2.mov", "/videos/home3.mov", "/videos/home4.mov"];
+const videos = ["/videos/home2.mov", "/videos/Toronto.mov", "/videos/home4.mov", "/videos/home3.mov"];
 
 // swap these filenames to match what you placed in /public/images
 const gallery = [
@@ -63,7 +63,9 @@ export default function HomePage() {
             muted
             loop
             playsInline
-            className="absolute inset-0 h-full w-full object-cover"
+            className={`absolute inset-0 h-full w-full object-cover ${
+              active >= 2 ? "md:object-[center_30%]" : ""
+            }`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
