@@ -18,12 +18,12 @@ const gallery = [
 ];
 
 const divisions = [
-  { slug: "models", title: "Models" },
-  { slug: "artists-musicians", title: "Artists & Musicians" },
-  { slug: "photographers", title: "Photographers" },
-  { slug: "videographers", title: "Videographers" },
-  { slug: "creators", title: "Creators" },
-  { slug: "performers", title: "Performers" },
+  { slug: "lifestyle-culture-influence", title: "Lifestyle, Culture & Influence" },
+  { slug: "entertainment-performance", title: "Entertainment and Performance" },
+  { slug: "literary-narrative-arts", title: "Literary & Narrative Arts" },
+  { slug: "tech-innovation-media", title: "Tech, Innovation & Media" },
+  { slug: "education-knowledge-arts", title: "Education & Knowledge Arts" },
+  { slug: "multi-disciplinary-experimental", title: "Multi-Disciplinary & Experimental" },
 ];
 
 function SectionTitle({ eyebrow, title }: { eyebrow?: string; title: string }) {
@@ -175,8 +175,10 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
           <SectionTitle title="Talent Divisions" />
           <p className="typo-body max-w-3xl text-[var(--color-text-muted)]">
-            The House of OROS Institute works across multiple creative disciplines. Applicants may explore the division that
-            aligns most closely with their work.
+            The House of OROS Institute works across multiple creative disciplines. Applicants may explore the division that aligns most closely with their work.
+          </p>
+          <p className="typo-body mt-4 max-w-3xl text-[var(--color-text-muted)]">
+            Choose the path that resonates with your craft:
           </p>
 
           <div className="mt-10 grid gap-4 md:grid-cols-2">

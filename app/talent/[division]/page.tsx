@@ -2,40 +2,34 @@ import Link from "next/link";
 import Image from "next/image";
 
 const divisionContent: Record<string, { title: string; body: string; images: string[] }> = {
-  "models": {
-    title: "Models",
-    body:
-      "We work with models who demonstrate presence, discipline, and long-term potential beyond surface visibility.\n\nDevelopment may include portfolio direction, industry readiness, and strategic positioning within global markets.",
+  "lifestyle-culture-influence": {
+    title: "Lifestyle, Culture & Influence",
+    body: "Design culture, influence movements, and craft the aesthetic of living.\n\nIncludes: Spiritual & Wellness Arts, Culinary Arts, Cultural Leadership, Personal Branding, Fashion & Style Curation, Modeling & Creative Representation.",
     images: ["/images/01.png", "/images/02.png", "/images/03.png"],
   },
-  "artists-musicians": {
-    title: "Artists & Musicians",
-    body:
-      "We work with artists who are ready for structure, refinement, and long-term direction.\n\nDevelopment may include positioning, creative clarity, and professional readiness.",
+  "entertainment-performance": {
+    title: "Entertainment and Performance",
+    body: "Bring ideas to life through stage, sound, movement, and immersive experiences.\n\nIncludes: Music, Dance, Theater, Film, Performance Art, Live & Experiential Events.",
     images: ["/images/04.png", "/images/05.png", "/images/06.png"],
   },
-  photographers: {
-    title: "Photographers",
-    body:
-      "We work with photographers who demonstrate vision, consistency, and an editorial standard.\n\nDevelopment may include portfolio direction, industry positioning, and brand alignment.",
+  "literary-narrative-arts": {
+    title: "Literary & Narrative Arts",
+    body: "Shape ideas, culture, and society through story, word, and narrative.\n\nIncludes: Writing, Poetry, Scriptwriting, Comics, Storyboarding, Storytelling, Cultural Narratives.",
     images: ["/images/02.png", "/images/03.png", "/images/04.png"],
   },
-  videographers: {
-    title: "Videographers",
-    body:
-      "We work with videographers who understand pacing, story, and visual discipline.\n\nDevelopment may include reel curation, client alignment, and strategic positioning.",
+  "tech-innovation-media": {
+    title: "Tech, Innovation & Media",
+    body: "Push the boundaries of creation through technology, digital platforms, and new media.\n\nIncludes: Game Design, VR/AR Experiences, Interactive Media, App & Software Development, Generative AI Projects.",
     images: ["/images/03.png", "/images/04.png", "/images/05.png"],
   },
-  creators: {
-    title: "Creators",
-    body:
-      "We work with creators who are building something intentional, not viral.\n\nDevelopment may include positioning, clarity, and long-term strategy.",
+  "education-knowledge-arts": {
+    title: "Education & Knowledge Arts",
+    body: "Illuminate minds, preserve wisdom, and guide transformation.\n\nIncludes: Curriculum Design, Workshops & Coaching, Thought Leadership, Research & Cultural Documentation.",
     images: ["/images/04.png", "/images/01.png", "/images/06.png"],
   },
-  performers: {
-    title: "Performers",
-    body:
-      "We work with performers who demonstrate presence, discipline, and professional readiness.\n\nDevelopment may include strategy, positioning, and access when alignment exists.",
+  "multi-disciplinary-experimental": {
+    title: "Multi-Disciplinary & Experimental",
+    body: "For creators whose vision transcends categories, breaking boundaries to redefine creative expression.\n\nIncludes: Hybrid Media, Conceptual Projects, Interdisciplinary Innovation, Experimental Work.",
     images: ["/images/06.png", "/images/05.png", "/images/01.png"],
   },
 };
@@ -74,6 +68,10 @@ export default async function DivisionPage({ params }: { params: Promise<{ divis
             </div>
           ))}
         </div>
+
+        <p className="mt-10 text-[14px] text-[var(--color-text-muted)]">
+          Unsure where you belong? Submit your portfolio, and we'll match your work with the division that will amplify your impact and prestige.
+        </p>
       </div>
     </main>
   );

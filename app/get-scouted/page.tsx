@@ -28,7 +28,14 @@ export default function GetScouted() {
   const [success, setSuccess] = useState(false);
 
   const disciplines = useMemo(
-    () => ["Models", "Artists & Musicians", "Photographers", "Videographers", "Creators", "Performers"],
+    () => [
+      "Lifestyle, Culture & Influence",
+      "Entertainment and Performance",
+      "Literary & Narrative Arts",
+      "Tech, Innovation & Media",
+      "Education & Knowledge Arts",
+      "Multi-Disciplinary & Experimental",
+    ],
     []
   );
 
