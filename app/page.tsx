@@ -251,14 +251,14 @@ export default function HomePage() {
               },
             ].map((card) => (
               <div key={card.title} className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-8">
-                <div className="typo-h3">{card.title}</div>
+                <div className="typo-h3 text-[var(--color-text)]">{card.title}</div>
                 <p className="typo-body mt-4 text-[var(--color-text-muted)]">{card.body}</p>
               </div>
             ))}
           </div>
 
           <div className="mt-12 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-8 md:p-10">
-            <div className="typo-h3">
+            <div className="typo-h3 text-[var(--color-text)]">
               The Institute exists to build longevity, not visibility.
             </div>
             <p className="typo-body mt-4 text-[var(--color-text-muted)]">
