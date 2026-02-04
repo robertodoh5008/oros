@@ -4,6 +4,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import Link from "next/link";
 import { ThemeProvider } from "./components/ThemeProvider";
 import { ThemeToggle } from "./components/ThemeToggle";
+import { MobileNav } from "./components/MobileNav";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
               <div className="flex items-center gap-4 md:hidden">
                 <ThemeToggle />
+                <MobileNav />
               </div>
             </div>
             <div className="h-px w-full bg-[var(--color-border)]" />
