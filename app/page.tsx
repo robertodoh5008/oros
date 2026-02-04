@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 const videos = ["/videos/home1.mov", "/videos/home2.mov", "/videos/home3.mov", "/videos/home4.mov"];
 
@@ -49,15 +49,6 @@ export default function HomePage() {
   return () => clearInterval(interval);
 }, []);
 
-  const heroCopy = useMemo(
-    () => ({
-      heading: "The House of OROS Institute",
-      subheading: "Talent Management & Consulting",
-      subline:
-        "A private institute for the development, positioning, and long-term stewardship of creative talent.",
-    }),
-    []
-  );
 
   return (
     <main className="bg-[var(--color-bg)]">
@@ -83,41 +74,48 @@ export default function HomePage() {
         {/* overlay - keep dark for video readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/65 to-black" />
 
-        {/* content - hero text always white on video */}
-        <div className="relative z-10 flex h-full items-end">
-          <div className="mx-auto w-full max-w-6xl px-5 pb-16 md:px-8 md:pb-20">
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.1 }}
-              className="max-w-3xl"
-            >
-              <div className="typo-eyebrow mb-4 text-white/60">
-                INSTITUTE • MANAGEMENT • CONSULTING
-              </div>
+        {/* content - centered editorial typography */}
+        <div className="relative z-10 flex h-full items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.1 }}
+            className="text-center text-white"
+          >
+            {/* THE HOUSE OF */}
+            <div className="text-[12px] uppercase tracking-[0.3em] text-white/80 md:text-[14px]">
+              THE HOUSE OF
+            </div>
 
-              <h1 className="typo-hero text-white">
-                {heroCopy.heading}
-              </h1>
+            {/* OROS */}
+            <h1 className="font-serif text-[80px] leading-[0.85] tracking-[0.02em] md:text-[160px]">
+              OROS
+            </h1>
 
-              <div className="mt-5 text-[14px] tracking-[0.18em] text-white/75">
-                {heroCopy.subheading}
-              </div>
+            {/* INSTITUTE with lines */}
+            <div className="mt-2 flex items-center justify-center gap-4 md:mt-4">
+              <span className="h-px w-10 bg-white/40 md:w-16" />
+              <span className="text-[11px] uppercase tracking-[0.25em] text-white/90 md:text-[13px]">
+                INSTITUTE
+              </span>
+              <span className="h-px w-10 bg-white/40 md:w-16" />
+            </div>
 
-              <p className="typo-body mt-6 max-w-2xl text-white/70">
-                {heroCopy.subline}
-              </p>
+            {/* Tagline */}
+            <div className="mt-4 font-serif text-[16px] tracking-[0.08em] text-white/85 md:mt-6 md:text-[20px]">
+              Talent Management & Consulting
+            </div>
 
-              <div className="mt-8">
-                <Link
-                  href="/get-scouted"
-                  className="inline-flex items-center rounded-full border border-white/25 px-6 py-3 text-[12px] tracking-[0.22em] text-white hover:border-white/60"
-                >
-                  GET SCOUTED NOW
-                </Link>
-              </div>
-            </motion.div>
-          </div>
+            {/* CTA Button */}
+            <div className="mt-10 md:mt-14">
+              <Link
+                href="/get-scouted"
+                className="inline-flex items-center rounded-full border border-white/25 px-6 py-3 text-[12px] tracking-[0.22em] text-white hover:border-white/60"
+              >
+                GET SCOUTED NOW
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
 
