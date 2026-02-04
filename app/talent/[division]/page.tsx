@@ -49,19 +49,19 @@ export default async function DivisionPage({ params }: { params: Promise<{ divis
   };
 
   return (
-    <main className="min-h-screen bg-black pt-28">
+    <main className="min-h-screen bg-[var(--color-bg)] pt-28">
       <div className="mx-auto max-w-6xl px-5 pb-16 md:px-8">
-        <div className="typo-eyebrow mb-2 text-white/55">TALENT DIVISION</div>
+        <div className="typo-eyebrow mb-2 text-[var(--color-text-subtle)]">TALENT DIVISION</div>
         <h1 className="typo-h1">{data.title}</h1>
 
-        <p className="typo-body mt-6 max-w-3xl whitespace-pre-line text-white/70">
+        <p className="typo-body mt-6 max-w-3xl whitespace-pre-line text-[var(--color-text-muted)]">
           {data.body}
         </p>
 
         <div className="mt-8">
           <Link
             href="/get-scouted"
-            className="inline-flex items-center rounded-full border border-white/25 px-6 py-3 text-[12px] tracking-[0.22em] text-white hover:border-white/60"
+            className="inline-flex items-center rounded-full border border-[var(--color-border-strong)] px-6 py-3 text-[12px] tracking-[0.22em] text-[var(--color-text)] hover:border-[var(--color-text-muted)]"
           >
             GET SCOUTED NOW
           </Link>
@@ -69,7 +69,7 @@ export default async function DivisionPage({ params }: { params: Promise<{ divis
 
         <div className="mt-12 grid gap-3 md:grid-cols-3">
           {data.images.map((src) => (
-            <div key={src} className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+            <div key={src} className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)]">
               <Image src={src} alt={data.title} fill className="object-cover" />
             </div>
           ))}

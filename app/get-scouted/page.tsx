@@ -71,15 +71,15 @@ export default function GetScouted() {
   }
 
   return (
-    <main className="relative z-10 min-h-screen bg-black pt-28">
+    <main className="relative z-10 min-h-screen bg-[var(--color-bg)] pt-28">
       <div className="mx-auto max-w-3xl px-5 pb-16 md:px-8">
-        <div className="typo-eyebrow mb-2 text-white/55">APPLICATION</div>
+        <div className="typo-eyebrow mb-2 text-[var(--color-text-subtle)]">APPLICATION</div>
 
         <h1 className="typo-h1">
           Get scouted for The House of OROS Institute
         </h1>
 
-        <div className="typo-body mt-6 space-y-4 text-white/70">
+        <div className="typo-body mt-6 space-y-4 text-[var(--color-text-muted)]">
           <p>
             Applying to The House of OROS Institute is an expression of interest in professional development,
             strategic guidance, and long-term growth.
@@ -93,29 +93,29 @@ export default function GetScouted() {
           </p>
         </div>
 
-        <div className="mt-10 rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8">
+        <div className="mt-10 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6 md:p-8">
           <div className="typo-h3">Begin Application</div>
 
           {/* Required acceptance */}
-          <div className="mt-6 space-y-3 text-sm text-white/75">
+          <div className="mt-6 space-y-3 text-sm text-[var(--color-text-muted)]">
             <label className="flex items-start gap-3">
               <input
                 type="checkbox"
-                className="mt-1 h-4 w-4 accent-white"
+                className="mt-1 h-4 w-4 accent-[var(--color-text)]"
                 checked={accepted}
                 onChange={(e) => setAccepted(e.target.checked)}
               />
               <span>
                 I accept the{" "}
-                <a className="underline hover:text-white" href="/privacy">Privacy Policy</a> and{" "}
-                <a className="underline hover:text-white" href="/terms">Terms & Conditions</a>.
+                <a className="underline hover:text-[var(--color-text)]" href="/privacy">Privacy Policy</a> and{" "}
+                <a className="underline hover:text-[var(--color-text)]" href="/terms">Terms & Conditions</a>.
               </span>
             </label>
 
             <label className="flex items-start gap-3">
               <input
                 type="checkbox"
-                className="mt-1 h-4 w-4 accent-white"
+                className="mt-1 h-4 w-4 accent-[var(--color-text)]"
                 checked={confirm}
                 onChange={(e) => setConfirm(e.target.checked)}
               />
@@ -150,18 +150,18 @@ export default function GetScouted() {
             />
 
             <div>
-              <div className="typo-eyebrow mb-2 text-white/55">
+              <div className="typo-eyebrow mb-2 text-[var(--color-text-subtle)]">
                 PRIMARY DISCIPLINE
               </div>
               <select
                 value={form.discipline}
                 onChange={(e) => setForm({ ...form, discipline: e.target.value })}
                 disabled={!isFormEnabled}
-                className="w-full rounded-xl border border-white/15 bg-black/40 px-4 py-3 text-sm text-white outline-none disabled:opacity-40"
+                className="w-full rounded-xl border border-[var(--color-border-strong)] bg-[var(--color-input-bg)] px-4 py-3 text-sm text-[var(--color-text)] outline-none disabled:opacity-40"
               >
                 <option value="">Select</option>
                 {disciplines.map((d) => (
-                  <option key={d} value={d} className="bg-black">
+                  <option key={d} value={d} className="bg-[var(--color-bg)]">
                     {d}
                   </option>
                 ))}
@@ -177,7 +177,7 @@ export default function GetScouted() {
             />
 
             <div>
-              <div className="typo-eyebrow mb-2 text-white/55">
+              <div className="typo-eyebrow mb-2 text-[var(--color-text-subtle)]">
                 WHY ARE YOU APPLYING?
               </div>
               <textarea
@@ -185,7 +185,7 @@ export default function GetScouted() {
                 onChange={(e) => setForm({ ...form, statement: e.target.value })}
                 disabled={!isFormEnabled}
                 rows={5}
-                className="w-full resize-none rounded-xl border border-white/15 bg-black/40 px-4 py-3 text-sm text-white outline-none disabled:opacity-40"
+                className="w-full resize-none rounded-xl border border-[var(--color-border-strong)] bg-[var(--color-input-bg)] px-4 py-3 text-sm text-[var(--color-text)] outline-none disabled:opacity-40"
                 placeholder="Short statement..."
               />
             </div>
@@ -193,13 +193,13 @@ export default function GetScouted() {
             <button
               type="submit"
               disabled={!isFormValid || loading}
-              className="mt-2 inline-flex w-fit rounded-full border border-white/25 px-6 py-3 text-[12px] tracking-[0.22em] text-white disabled:opacity-40"
+              className="mt-2 inline-flex w-fit rounded-full border border-[var(--color-border-strong)] px-6 py-3 text-[12px] tracking-[0.22em] text-[var(--color-text)] disabled:opacity-40"
             >
               {loading ? "SUBMITTING…" : "SUBMIT APPLICATION"}
             </button>
 
             {success && (
-              <p className="mt-4 text-sm text-white/70">
+              <p className="mt-4 text-sm text-[var(--color-text-muted)]">
                 Application received. Our team will review and respond if aligned.
               </p>
             )}
@@ -227,7 +227,7 @@ function Field({
 }) {
   return (
     <div>
-      <div className="typo-eyebrow mb-2 text-white/55">
+      <div className="typo-eyebrow mb-2 text-[var(--color-text-subtle)]">
         {label.toUpperCase()}
       </div>
       <input
@@ -235,7 +235,7 @@ function Field({
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-xl border border-white/15 bg-black/40 px-4 py-3 text-sm text-white outline-none disabled:opacity-40"
+        className="w-full rounded-xl border border-[var(--color-border-strong)] bg-[var(--color-input-bg)] px-4 py-3 text-sm text-[var(--color-text)] outline-none disabled:opacity-40"
         placeholder={placeholder}
       />
     </div>

@@ -30,7 +30,7 @@ function SectionTitle({ eyebrow, title }: { eyebrow?: string; title: string }) {
   return (
     <div className="mb-8">
       {eyebrow ? (
-        <div className="typo-eyebrow mb-2 text-white/55">{eyebrow}</div>
+        <div className="typo-eyebrow mb-2 text-[var(--color-text-subtle)]">{eyebrow}</div>
       ) : null}
       <h2 className="typo-h2">{title}</h2>
     </div>
@@ -60,7 +60,7 @@ export default function HomePage() {
   );
 
   return (
-    <main className="bg-black">
+    <main className="bg-[var(--color-bg)]">
       {/* HERO */}
       <section className="relative h-[100svh] overflow-hidden">
         {/* Video crossfade */}
@@ -80,10 +80,10 @@ export default function HomePage() {
           />
         </AnimatePresence>
 
-        {/* overlay */}
+        {/* overlay - keep dark for video readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/65 to-black" />
 
-        {/* content */}
+        {/* content - hero text always white on video */}
         <div className="relative z-10 flex h-full items-end">
           <div className="mx-auto w-full max-w-6xl px-5 pb-16 md:px-8 md:pb-20">
             <motion.div
@@ -96,7 +96,7 @@ export default function HomePage() {
                 INSTITUTE • MANAGEMENT • CONSULTING
               </div>
 
-              <h1 className="typo-hero">
+              <h1 className="typo-hero text-white">
                 {heroCopy.heading}
               </h1>
 
@@ -122,11 +122,11 @@ export default function HomePage() {
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="scroll-mt-24 border-t border-white/10 bg-black">
+      <section id="about" className="scroll-mt-24 border-t border-[var(--color-border)] bg-[var(--color-bg)]">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-12 md:gap-12 md:px-8 md:py-24">
           <div className="md:col-span-6">
             <SectionTitle title="About the House" />
-            <div className="typo-body space-y-5 text-white/70">
+            <div className="typo-body space-y-5 text-[var(--color-text-muted)]">
               <p>
                 The House of OROS Institute is a private management and consulting institute dedicated to creatives
                 navigating complex global industries.
@@ -139,8 +139,8 @@ export default function HomePage() {
                 Our work is rooted in discernment. We focus on preparation, positioning, and long-term development rather
                 than speed or exposure.
               </p>
-              <p className="text-white/80">The House of OROS is not a marketplace.</p>
-              <p className="text-white/80">It is a container built for those ready to take their craft seriously.</p>
+              <p className="text-[var(--color-text)]">The House of OROS is not a marketplace.</p>
+              <p className="text-[var(--color-text)]">It is a container built for those ready to take their craft seriously.</p>
             </div>
           </div>
 
@@ -150,7 +150,7 @@ export default function HomePage() {
                 <button
                   key={src}
                   onClick={() => setModalSrc(src)}
-                  className="group relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/10 bg-white/5"
+                  className="group relative aspect-[3/4] overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)]"
                 >
                   <Image
                     src={src}
@@ -163,7 +163,7 @@ export default function HomePage() {
               ))}
             </div>
 
-            <div className="typo-eyebrow mt-6 text-white/50">
+            <div className="typo-eyebrow mt-6 text-[var(--color-text-subtle)]">
               EDITORIAL SELECTION • CLICK TO EXPAND
             </div>
           </div>
@@ -171,10 +171,10 @@ export default function HomePage() {
       </section>
 
       {/* TALENT */}
-      <section id="talent" className="scroll-mt-24 border-t border-white/10 bg-black">
+      <section id="talent" className="scroll-mt-24 border-t border-[var(--color-border)] bg-[var(--color-bg)]">
         <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
           <SectionTitle title="Talent Divisions" />
-          <p className="typo-body max-w-3xl text-white/70">
+          <p className="typo-body max-w-3xl text-[var(--color-text-muted)]">
             The House of OROS Institute works across multiple creative disciplines. Applicants may explore the division that
             aligns most closely with their work.
           </p>
@@ -187,7 +187,7 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: i * 0.05 }}
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5"
+                className="group relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)]"
               >
                 <div className="absolute inset-0 opacity-70">
                   <Image
@@ -196,12 +196,14 @@ export default function HomePage() {
                     fill
                     className="object-cover"
                   />
+                  {/* Keep dark overlay for image readability */}
                   <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/65 to-black" />
                 </div>
 
+                {/* Text over image always white */}
                 <div className="relative z-10 p-8">
                   <div className="typo-eyebrow text-white/55">DIVISION</div>
-                  <div className="typo-h3 mt-2">{d.title}</div>
+                  <div className="typo-h3 text-white">{d.title}</div>
 
                   <div className="mt-6 flex items-center gap-4">
                     <Link
@@ -228,10 +230,10 @@ export default function HomePage() {
       </section>
 
       {/* THE INSTITUTE */}
-      <section id="institute" className="scroll-mt-24 border-t border-white/10 bg-black">
+      <section id="institute" className="scroll-mt-24 border-t border-[var(--color-border)] bg-[var(--color-bg)]">
         <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
           <SectionTitle title="The Institute" />
-          <div className="typo-eyebrow mb-10 text-white/55">HOW WE WORK</div>
+          <div className="typo-eyebrow mb-10 text-[var(--color-text-subtle)]">HOW WE WORK</div>
 
           <div className="grid gap-5 md:grid-cols-3">
             {[
@@ -248,36 +250,36 @@ export default function HomePage() {
                 body: "Through experience and network, we provide advisory guidance and introductions when alignment exists. Opportunities are assessed individually. Nothing is guaranteed.",
               },
             ].map((card) => (
-              <div key={card.title} className="rounded-2xl border border-white/10 bg-white/5 p-8">
+              <div key={card.title} className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-8">
                 <div className="typo-h3">{card.title}</div>
-                <p className="typo-body mt-4 text-white/70">{card.body}</p>
+                <p className="typo-body mt-4 text-[var(--color-text-muted)]">{card.body}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 rounded-2xl border border-white/10 bg-white/5 p-8 md:p-10">
+          <div className="mt-12 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-8 md:p-10">
             <div className="typo-h3">
               The Institute exists to build longevity, not visibility.
             </div>
-            <p className="typo-body mt-4 text-white/70">
+            <p className="typo-body mt-4 text-[var(--color-text-muted)]">
               Our mission is to identify, develop, and position creative talent through intentional management, consulting, and professional development.
             </p>
 
-            <div className="mt-6 grid gap-2 text-[14px] text-white/75 md:grid-cols-2">
+            <div className="mt-6 grid gap-2 text-[14px] text-[var(--color-text-muted)] md:grid-cols-2">
               <div>• Protect talent from exploitation and misinformation</div>
               <div>• Provide structure where there is often chaos</div>
               <div>• Offer strategic guidance instead of empty promises</div>
               <div>• Build long-term careers, not short-term exposure</div>
             </div>
 
-            <p className="typo-body mt-6 text-white/70">
+            <p className="typo-body mt-6 text-[var(--color-text-muted)]">
               We believe talent flourishes when paired with clarity, preparation, and aligned opportunity. The House of OROS Institute was created to be a container where that process can unfold with integrity.
             </p>
 
             <div className="mt-8">
               <Link
                 href="/get-scouted"
-                className="inline-flex items-center rounded-full border border-white/25 px-6 py-3 text-[12px] tracking-[0.22em] text-white hover:border-white/60"
+                className="inline-flex items-center rounded-full border border-[var(--color-border-strong)] px-6 py-3 text-[12px] tracking-[0.22em] text-[var(--color-text)] hover:border-[var(--color-text-muted)]"
               >
                 GET SCOUTED NOW
               </Link>
@@ -286,7 +288,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Modal */}
+      {/* Modal - keep dark backdrop */}
       <AnimatePresence>
         {modalSrc ? (
           <motion.div
