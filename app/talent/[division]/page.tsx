@@ -5,27 +5,27 @@ const divisionContent: Record<string, { title: string; body: string; images: str
   "lifestyle-culture-influence": {
     title: "Lifestyle, Culture & Influence",
     body: "Design culture, influence movements, and craft the aesthetic of living.\n\nIncludes: Spiritual & Wellness Arts, Culinary Arts, Cultural Leadership, Personal Branding, Fashion & Style Curation, Modeling & Creative Representation.",
-    images: ["/images/01.png", "/images/02.png", "/images/03.png"],
+    images: ["/images/Talent/Lifestyle,%20Culture%20%26%20Influence/IMG_1617.JPG", "/images/Talent/Lifestyle,%20Culture%20%26%20Influence/IMG_1619.JPG", "/images/Talent/Lifestyle,%20Culture%20%26%20Influence/IMG_1620.JPG"],
   },
   "entertainment-performance": {
     title: "Entertainment and Performance",
     body: "Bring ideas to life through stage, sound, movement, and immersive experiences.\n\nIncludes: Music, Dance, Theater, Film, Performance Art, Live & Experiential Events.",
-    images: ["/images/04.png", "/images/05.png", "/images/06.png"],
+    images: ["/images/Talent/Entertainment%20%26%20Performance/IMG_1622.JPG", "/images/Talent/Entertainment%20%26%20Performance/IMG_1623.JPG", "/images/Talent/Entertainment%20%26%20Performance/IMG_1624.JPG"],
   },
   "literary-narrative-arts": {
     title: "Literary & Narrative Arts",
     body: "Shape ideas, culture, and society through story, word, and narrative.\n\nIncludes: Writing, Poetry, Scriptwriting, Comics, Storyboarding, Storytelling, Cultural Narratives.",
-    images: ["/images/02.png", "/images/03.png", "/images/04.png"],
+    images: ["/images/Talent/Literary%20%26%20Narrative%20Arts/IMG_1628.JPG", "/images/Talent/Literary%20%26%20Narrative%20Arts/IMG_1629.JPG", "/images/Talent/Literary%20%26%20Narrative%20Arts/IMG_1630.JPG"],
   },
   "tech-innovation-media": {
     title: "Tech, Innovation & Media",
     body: "Push the boundaries of creation through technology, digital platforms, and new media.\n\nIncludes: Game Design, VR/AR Experiences, Interactive Media, App & Software Development, Generative AI Projects.",
-    images: ["/images/03.png", "/images/04.png", "/images/05.png"],
+    images: ["/images/Talent/Tech,%20Innovation%20%26%20Media/IMG_1633.JPG", "/images/Talent/Tech,%20Innovation%20%26%20Media/IMG_1634.JPG", "/images/Talent/Tech,%20Innovation%20%26%20Media/IMG_1637.JPG"],
   },
   "education-knowledge-arts": {
     title: "Education & Knowledge Arts",
     body: "Illuminate minds, preserve wisdom, and guide transformation.\n\nIncludes: Curriculum Design, Workshops & Coaching, Thought Leadership, Research & Cultural Documentation.",
-    images: ["/images/04.png", "/images/01.png", "/images/06.png"],
+    images: ["/images/Talent/Education%20%26%20Knowledge%20Arts/IMG_1639.JPG", "/images/Talent/Education%20%26%20Knowledge%20Arts/IMG_1640.JPG", "/images/Talent/Education%20%26%20Knowledge%20Arts/IMG_1642.JPG"],
   },
   "multi-disciplinary-experimental": {
     title: "Multi-Disciplinary & Experimental",
