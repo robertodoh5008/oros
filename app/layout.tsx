@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ThemeProvider } from "./components/ThemeProvider";
 import { ThemeToggle } from "./components/ThemeToggle";
 import { MobileNav } from "./components/MobileNav";
+import { SiteFooter } from "./components/SiteFooter";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link className="hover:text-[var(--color-text)]" href="/#talent">TALENT</Link>
                 <Link className="hover:text-[var(--color-text)]" href="/#institute">THE INSTITUTE</Link>
                 <Link className="hover:text-[var(--color-text)]" href="/get-scouted">GET SCOUTED</Link>
+                <Link className="hover:text-[var(--color-text)]" href="/world-cup-2026">WORLD CUP 2026</Link>
                 <ThemeToggle />
               </nav>
 
@@ -43,15 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
           {children}
 
-          <footer className="border-t border-[var(--color-border)] bg-[var(--color-bg)]">
-            <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-10 text-xs text-[var(--color-text-subtle)] md:flex-row md:items-center md:justify-between md:px-8">
-              <div className="tracking-[0.12em]">&copy; {new Date().getFullYear()} THE HOUSE OF OROS INSTITUTE</div>
-              <div className="flex gap-6 tracking-[0.18em]">
-                <Link className="hover:text-[var(--color-text)]" href="/privacy">PRIVACY</Link>
-                <Link className="hover:text-[var(--color-text)]" href="/terms">TERMS</Link>
-              </div>
-            </div>
-          </footer>
+          <SiteFooter />
         </ThemeProvider>
       </body>
     </html>

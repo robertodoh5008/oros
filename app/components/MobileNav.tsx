@@ -8,6 +8,7 @@ const navLinks = [
   { href: "/#about", label: "ABOUT" },
   { href: "/#talent", label: "TALENT" },
   { href: "/#institute", label: "THE INSTITUTE" },
+  { href: "/world-cup-2026", label: "WORLD CUP 2026" },
 ];
 
 export function MobileNav() {
