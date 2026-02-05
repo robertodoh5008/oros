@@ -15,7 +15,7 @@ const gallery = [
   { src: "/images/Talent/Literary%20%26%20Narrative%20Arts/IMG_1630.JPG", position: "center" },
   { src: "/images/Talent/Tech,%20Innovation%20%26%20Media/IMG_1633.JPG", position: "center" },
   { src: "/images/Talent/Education%20%26%20Knowledge%20Arts/IMG_1642.JPG", position: "center" },
-  { src: "/images/06.png", position: "center" },
+  { src: "/images/gallery/01.png", position: "center" },
 ];
 
 const rotatingImages = [

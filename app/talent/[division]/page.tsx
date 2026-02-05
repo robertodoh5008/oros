@@ -30,7 +30,7 @@ const divisionContent: Record<string, { title: string; body: string; images: str
   "multi-disciplinary-experimental": {
     title: "Multi-Disciplinary & Experimental",
     body: "For creators whose vision transcends categories, breaking boundaries to redefine creative expression.\n\nIncludes: Hybrid Media, Conceptual Projects, Interdisciplinary Innovation, Experimental Work.",
-    images: ["/images/06.png", "/images/05.png", "/images/01.png"],
+    images: ["/images/gallery/01.png", "/images/gallery/02.png", "/images/gallery/03.png"],
   },
 };
 
