@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { HorizontalGallery } from "./components/HorizontalGallery";
 
 const videos = ["/videos/home2.mov", "/videos/Toronto.mov", "/videos/home4.mov", "/videos/home3.mov"];
 
@@ -53,6 +54,13 @@ function shuffleArray<T>(arr: T[]): T[] {
   }
   return shuffled;
 }
+
+const galleryImages = [
+  "/images/gallery/01.png",
+  "/images/gallery/02.png",
+  "/images/gallery/03.png",
+  "/images/gallery/04.png",
+];
 
 const divisions = [
   { slug: "lifestyle-culture-influence", title: "Lifestyle, Culture & Influence" },
@@ -327,6 +335,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* GALLERY */}
+      <HorizontalGallery images={galleryImages} />
 
       {/* THE INSTITUTE */}
       <section id="institute" className="scroll-mt-24 border-t border-[var(--color-border)] bg-[var(--color-bg)]">

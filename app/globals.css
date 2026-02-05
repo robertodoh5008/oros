@@ -72,6 +72,10 @@ body {
   letter-spacing: 0.22em;
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .typo-hero { font-size: 72px; }
   .typo-h1  { font-size: 56px; }
