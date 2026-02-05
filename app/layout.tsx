@@ -20,12 +20,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen bg-[var(--color-bg)] text-[var(--color-text)]">
         <ThemeProvider>
           <header className="fixed top-0 z-50 w-full bg-[var(--color-bg-header)] backdrop-blur-md">
-            <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 md:px-8">
+            <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 xl:px-8">
               <Link href="/" className="font-serif text-[15px] tracking-[0.12em]">
                 THE HOUSE OF OROS
               </Link>
 
-              <nav className="hidden items-center gap-7 text-[12px] tracking-[0.18em] text-[var(--color-text-muted)] md:flex">
+              <nav className="hidden items-center gap-7 text-[12px] tracking-[0.18em] text-[var(--color-text-muted)] xl:flex">
                 <Link className="hover:text-[var(--color-text)]" href="/#about">ABOUT</Link>
                 <Link className="hover:text-[var(--color-text)]" href="/#talent">TALENT</Link>
                 <Link className="hover:text-[var(--color-text)]" href="/#institute">THE INSTITUTE</Link>
@@ -33,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <ThemeToggle />
               </nav>
 
-              <div className="flex items-center gap-4 md:hidden">
+              <div className="flex items-center gap-4 xl:hidden">
                 <ThemeToggle />
                 <MobileNav />
               </div>

@@ -287,7 +287,7 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: i * 0.05 }}
                 className="group relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)]"
               >
-                <div className="absolute inset-0 opacity-70">
+                <div className="absolute inset-0">
                   <Image
                     src={gallery[i % gallery.length].src}
                     alt={d.title}
