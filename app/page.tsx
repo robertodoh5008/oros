@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const videos = ["/videos/home2.mov", "/videos/Toronto.mov", "/videos/home4.mov", "/videos/home3.mov"];
 
@@ -16,6 +16,43 @@ const gallery = [
   "/images/05.png",
   "/images/06.png",
 ];
+
+const rotatingImages = [
+  "/images/Rotating/05.png",
+  "/images/Rotating/06.png",
+  "/images/Rotating/IMG_1415.jpg.png",
+  "/images/Rotating/IMG_1416.jpg.png",
+  "/images/Rotating/IMG_1497%202.JPG",
+  "/images/Rotating/IMG_1498%202.JPG",
+  "/images/Rotating/IMG_1499%202.JPG",
+  "/images/Rotating/IMG_1500%202.JPG",
+  "/images/Rotating/IMG_1573%202.JPG",
+  "/images/Rotating/IMG_1574%202.JPG",
+  "/images/Rotating/IMG_1575%202.JPG",
+  "/images/Rotating/IMG_1576%202.JPG",
+  "/images/Rotating/IMG_1577%202.JPG",
+  "/images/Rotating/IMG_1578%202.JPG",
+  "/images/Rotating/IMG_1580%202.JPG",
+  "/images/Rotating/IMG_1581%202.JPG",
+  "/images/Rotating/IMG_1582%202.JPG",
+  "/images/Rotating/IMG_1586%202.JPG",
+  "/images/Rotating/IMG_1587%202.JPG",
+  "/images/Rotating/IMG_4699.png",
+  "/images/Rotating/IMG_5930.JPG.png",
+  "/images/Rotating/IMG_6160.JPG.png",
+  "/images/Rotating/IMG_7067.png",
+  "/images/Rotating/IMG_7634.PNG",
+  "/images/Rotating/IMG_9726.JPG.png",
+];
+
+function shuffleArray<T>(arr: T[]): T[] {
+  const shuffled = [...arr];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
 
 const divisions = [
   { slug: "lifestyle-culture-influence", title: "Lifestyle, Culture & Influence" },
@@ -41,14 +78,56 @@ export default function HomePage() {
   const [active, setActive] = useState(0);
   const [modalSrc, setModalSrc] = useState<string | null>(null);
 
+  // Deterministic initial state to avoid hydration mismatch
+  const displayCount = Math.min(4, rotatingImages.length);
+  const [visibleImages, setVisibleImages] = useState<string[]>(
+    rotatingImages.slice(0, displayCount)
+  );
+  const imageQueueRef = useRef<string[]>(rotatingImages.slice(displayCount));
+  const slotIndexRef = useRef(0);
+  const hasShuffledRef = useRef(false);
+
   useEffect(() => {
-  const interval = setInterval(() => {
-    setActive((prev) => (prev + 1) % videos.length);
-  }, 9000); // 9s per clip
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % videos.length);
+    }, 9000);
+    return () => clearInterval(interval);
+  }, []);
 
-  return () => clearInterval(interval);
-}, []);
+  // Shuffle on mount (client-only) to avoid SSR hydration mismatch
+  useEffect(() => {
+    if (!hasShuffledRef.current && rotatingImages.length > 0) {
+      hasShuffledRef.current = true;
+      const shuffled = shuffleArray(rotatingImages);
+      setVisibleImages(shuffled.slice(0, displayCount));
+      imageQueueRef.current = shuffled.slice(displayCount);
+    }
+  }, [displayCount]);
 
+  // Timed rotation: swap one image every 5 seconds
+  useEffect(() => {
+    if (rotatingImages.length <= displayCount) return;
+
+    const interval = setInterval(() => {
+      setVisibleImages((prev) => {
+        const queue = imageQueueRef.current;
+        if (queue.length === 0) return prev;
+
+        const slotToSwap = slotIndexRef.current % prev.length;
+        slotIndexRef.current += 1;
+
+        const nextImage = queue.shift()!;
+        const displaced = prev[slotToSwap];
+        queue.push(displaced);
+
+        const updated = [...prev];
+        updated[slotToSwap] = nextImage;
+        return updated;
+      });
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [displayCount]);
 
   return (
     <main className="bg-[var(--color-bg)]">
@@ -146,21 +225,38 @@ export default function HomePage() {
 
           <div className="md:col-span-6">
             <div className="grid grid-cols-2 gap-3">
-              {gallery.slice(0, 6).map((src) => (
-                <button
-                  key={src}
-                  onClick={() => setModalSrc(src)}
-                  className="group relative aspect-[3/4] overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)]"
-                >
-                  <Image
-                    src={src}
-                    alt="OROS editorial"
-                    fill
-                    className="object-cover transition duration-500 group-hover:scale-[1.03]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 transition group-hover:opacity-100" />
-                </button>
-              ))}
+              {visibleImages.length > 0 ? (
+                visibleImages.map((src, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setModalSrc(src)}
+                    className="group relative aspect-[3/4] overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)]"
+                  >
+                    <AnimatePresence mode="sync">
+                      <motion.div
+                        key={src}
+                        className="absolute inset-0"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 1.0, ease: "easeInOut" }}
+                      >
+                        <Image
+                          src={src}
+                          alt="OROS editorial"
+                          fill
+                          className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                        />
+                      </motion.div>
+                    </AnimatePresence>
+                    <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 transition group-hover:opacity-100" />
+                  </button>
+                ))
+              ) : (
+                <div className="col-span-2 flex aspect-[3/4] items-center justify-center rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)]">
+                  <span className="typo-eyebrow text-[var(--color-text-subtle)]">NO IMAGES AVAILABLE</span>
+                </div>
+              )}
             </div>
 
             <div className="typo-eyebrow mt-6 text-[var(--color-text-subtle)]">
