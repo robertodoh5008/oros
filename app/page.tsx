@@ -9,12 +9,12 @@ const videos = ["/videos/home2.mov", "/videos/Toronto.mov", "/videos/home4.mov",
 
 // swap these filenames to match what you placed in /public/images
 const gallery = [
-  "/images/01.png",
-  "/images/02.png",
-  "/images/03.png",
-  "/images/04.png",
-  "/images/05.png",
-  "/images/06.png",
+  { src: "/images/Talent/Lifestyle,%20Culture%20%26%20Influence/IMG_1620.JPG", position: "center 60%" },
+  { src: "/images/Talent/Entertainment%20%26%20Performance/IMG_1622.JPG", position: "center 20%" },
+  { src: "/images/Talent/Literary%20%26%20Narrative%20Arts/IMG_1630.JPG", position: "center" },
+  { src: "/images/Talent/Tech,%20Innovation%20%26%20Media/IMG_1633.JPG", position: "center" },
+  { src: "/images/Talent/Education%20%26%20Knowledge%20Arts/IMG_1642.JPG", position: "center" },
+  { src: "/images/06.png", position: "center" },
 ];
 
 const rotatingImages = [
@@ -289,10 +289,11 @@ export default function HomePage() {
               >
                 <div className="absolute inset-0 opacity-70">
                   <Image
-                    src={gallery[i % gallery.length]}
+                    src={gallery[i % gallery.length].src}
                     alt={d.title}
                     fill
                     className="object-cover"
+                    style={{ objectPosition: gallery[i % gallery.length].position }}
                   />
                   {/* Keep dark overlay for image readability */}
                   <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/65 to-black" />
