@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { HorizontalGallery } from "./components/HorizontalGallery";
 
-const videos = ["/videos/home2.mov", "/videos/Toronto.mov", "/videos/home4.mov", "/videos/home3.mov"];
+const videos = ["/videos/home2.mov", "/videos/Toronto.mp4", "/videos/home4.mov", "/videos/home3.mov"];
 
 // swap these filenames to match what you placed in /public/images
 const gallery = [
@@ -15,7 +15,7 @@ const gallery = [
   { src: "/images/Talent/Literary%20%26%20Narrative%20Arts/IMG_1630.JPG", position: "center" },
   { src: "/images/Talent/Tech,%20Innovation%20%26%20Media/IMG_1633.JPG", position: "center" },
   { src: "/images/Talent/Education%20%26%20Knowledge%20Arts/IMG_1642.JPG", position: "center" },
-  { src: "/images/gallery/01.png", position: "center" },
+  { src: "/images/Talent/Multi-Disciplinary%20%26%20Experimental/IMG_1750.jpg", position: "center" },
 ];
 
 const rotatingImages = [

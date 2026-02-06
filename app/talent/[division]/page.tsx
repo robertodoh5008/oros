@@ -30,7 +30,11 @@ const divisionContent: Record<string, { title: string; body: string; images: str
   "multi-disciplinary-experimental": {
     title: "Multi-Disciplinary & Experimental",
     body: "For creators whose vision transcends categories, breaking boundaries to redefine creative expression.\n\nIncludes: Hybrid Media, Conceptual Projects, Interdisciplinary Innovation, Experimental Work.",
-    images: ["/images/gallery/01.png", "/images/gallery/02.png", "/images/gallery/03.png"],
+    images: [
+      "/images/Talent/Multi-Disciplinary%20%26%20Experimental/IMG_1750.jpg",
+      "/images/Talent/Multi-Disciplinary%20%26%20Experimental/IMG_1751.jpg",
+      "/images/Talent/Multi-Disciplinary%20%26%20Experimental/IMG_1752.jpg"
+    ],
   },
 };
 
