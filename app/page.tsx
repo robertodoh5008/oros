@@ -21,8 +21,8 @@ const gallery = [
 const rotatingImages = [
   "/images/Rotating/05.png",
   "/images/Rotating/06.png",
-  "/images/Rotating/IMG_1415.jpg.png",
-  "/images/Rotating/IMG_1416.jpg.png",
+  "/images/Rotating/156A3231.JPEG",
+  "/images/Rotating/DSCF1427-Recovered.jpeg",
   "/images/Rotating/IMG_1497%202.JPG",
   "/images/Rotating/IMG_1498%202.JPG",
   "/images/Rotating/IMG_1499%202.JPG",
@@ -38,12 +38,19 @@ const rotatingImages = [
   "/images/Rotating/IMG_1582%202.JPG",
   "/images/Rotating/IMG_1586%202.JPG",
   "/images/Rotating/IMG_1587%202.JPG",
+  "/images/Rotating/IMG_1747.jpg",
+  "/images/Rotating/IMG_1748.jpg",
+  "/images/Rotating/IMG_1749.jpg",
+  "/images/Rotating/IMG_1756.jpg",
   "/images/Rotating/IMG_4699.png",
   "/images/Rotating/IMG_5930.JPG.png",
   "/images/Rotating/IMG_6160.JPG.png",
+  "/images/Rotating/IMG_6940.jpg",
   "/images/Rotating/IMG_7067.png",
   "/images/Rotating/IMG_7634.PNG",
+  "/images/Rotating/IMG_8384.JPG",
   "/images/Rotating/IMG_9726.JPG.png",
+  "/images/Rotating/KAY_4643.jpeg",
 ];
 
 function shuffleArray<T>(arr: T[]): T[] {
