@@ -376,7 +376,7 @@ export default function HomePage() {
 
           <div className="mt-12 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-8 md:p-10">
             <div className="typo-h3 text-[var(--color-text)]">
-              The Institute exists to build longevity, not visibility.
+              The Institute exists to build longevity and Visibility.
             </div>
             <p className="typo-body mt-4 text-[var(--color-text-muted)]">
               Our mission is to identify, develop, and position creative talent through intentional management, consulting, and professional development.
