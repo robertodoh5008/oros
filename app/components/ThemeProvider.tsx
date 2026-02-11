@@ -7,16 +7,16 @@ type Theme = "light" | "dark";
 const ThemeContext = createContext<{
   theme: Theme;
   toggleTheme: () => void;
-}>({ theme: "dark", toggleTheme: () => {} });
+}>({ theme: "light", toggleTheme: () => {} });
 
 export function useTheme() {
   return useContext(ThemeContext);
 }
 
 function getInitialTheme(): Theme {
-  if (typeof window === "undefined") return "dark";
+  if (typeof window === "undefined") return "light";
   const stored = localStorage.getItem("theme") as Theme | null;
-  return stored || "dark";
+  return stored || "light";
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
