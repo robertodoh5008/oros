@@ -6,6 +6,7 @@ import { ThemeProvider } from "./components/ThemeProvider";
 import { ThemeToggle } from "./components/ThemeToggle";
 import { MobileNav } from "./components/MobileNav";
 import { SiteFooter } from "./components/SiteFooter";
+import { CookieConsentBanner } from "./components/CookieConsentBanner";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
@@ -46,6 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
 
           <SiteFooter />
+          <CookieConsentBanner />
         </ThemeProvider>
       </body>
     </html>
