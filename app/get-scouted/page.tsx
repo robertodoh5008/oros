@@ -185,7 +185,7 @@ export default function GetScouted() {
 
             <div>
               <div className="typo-eyebrow mb-2 text-[var(--color-text-subtle)]">
-                WHY ARE YOU APPLYING?
+                INTEREST IN THE HOUSE
               </div>
               <textarea
                 value={form.statement}
@@ -193,7 +193,7 @@ export default function GetScouted() {
                 disabled={!isFormEnabled}
                 rows={5}
                 className="w-full resize-none rounded-xl border border-[var(--color-border-strong)] bg-[var(--color-input-bg)] px-4 py-3 text-sm text-[var(--color-text)] outline-none disabled:opacity-40"
-                placeholder="Short statement..."
+                placeholder="In a few sentences, please share why you wish to be part of The House of OROS Institute and what draws you to our work."
               />
             </div>
 
