@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { HorizontalGallery } from "./components/HorizontalGallery";
 
-const videos = ["/videos/home2.mov", "/videos/Toronto.mp4", "/videos/home4.mov", "/videos/home3.mov"];
+const videos = ["/videos/Toronto.mp4", "/videos/home4.mov", "/videos/home3.mov", "/videos/home2.mov"];
 
 // swap these filenames to match what you placed in /public/images
 const gallery = [
@@ -158,7 +158,7 @@ export default function HomePage() {
             loop
             playsInline
             className={`absolute inset-0 h-full w-full object-cover ${
-              active >= 2 ? "md:object-[center_30%]" : ""
+              active === 3 ? "md:object-[center_35%]" : active === 1 || active === 2 ? "md:object-[center_30%]" : ""
             }`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -216,8 +216,8 @@ export default function HomePage() {
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="scroll-mt-24 border-t border-[var(--color-border)] bg-[var(--color-bg)]">
-        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-12 md:gap-12 md:px-8 md:py-24">
+      <section id="about" className="scroll-mt-16 border-t border-[var(--color-border)] bg-[var(--color-bg)]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 pt-4 pb-16 md:grid-cols-12 md:gap-12 md:px-8 md:pt-6 md:pb-24">
           <div className="md:col-span-6">
             <SectionTitle title="About the House" />
             <div className="typo-body space-y-5 text-[var(--color-text-muted)]">
@@ -282,8 +282,8 @@ export default function HomePage() {
       </section>
 
       {/* TALENT */}
-      <section id="talent" className="scroll-mt-24 border-t border-[var(--color-border)] bg-[var(--color-bg)]">
-        <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
+      <section id="talent" className="scroll-mt-16 border-t border-[var(--color-border)] bg-[var(--color-bg)]">
+        <div className="mx-auto max-w-6xl px-5 pt-4 pb-16 md:px-8 md:pt-6 md:pb-24">
           <SectionTitle title="Talent Divisions" />
           <p className="typo-body max-w-3xl text-[var(--color-text-muted)]">
             The House of OROS Institute works across multiple creative disciplines. Applicants may explore the division that aligns most closely with their work.
@@ -347,8 +347,8 @@ export default function HomePage() {
       <HorizontalGallery images={galleryImages} />
 
       {/* THE INSTITUTE */}
-      <section id="institute" className="scroll-mt-24 border-t border-[var(--color-border)] bg-[var(--color-bg)]">
-        <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
+      <section id="institute" className="scroll-mt-16 border-t border-[var(--color-border)] bg-[var(--color-bg)]">
+        <div className="mx-auto max-w-6xl px-5 pt-4 pb-16 md:px-8 md:pt-6 md:pb-24">
           <SectionTitle title="The Institute" />
           <div className="typo-eyebrow mb-10 text-[var(--color-text-subtle)]">HOW WE WORK</div>
 

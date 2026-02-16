@@ -13,10 +13,14 @@ export function useTheme() {
   return useContext(ThemeContext);
 }
 
+function getTimeBasedTheme(): Theme {
+  const hour = new Date().getHours();
+  return hour >= 19 || hour < 6 ? "dark" : "light";
+}
+
 function getInitialTheme(): Theme {
   if (typeof window === "undefined") return "light";
-  const stored = localStorage.getItem("theme") as Theme | null;
-  return stored || "light";
+  return getTimeBasedTheme();
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
