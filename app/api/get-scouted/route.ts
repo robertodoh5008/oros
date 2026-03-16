@@ -15,7 +15,7 @@ export async function POST(req: Request) {
 
     await transporter.sendMail({
       from: `"House of OROS" <${process.env.OROS_EMAIL}>`,
-      to: "thehouseoforos@gmail.com",
+      to: "oros@orosinstitute.com",
       subject: "New Get Scouted Application",
       html: `
         <h2>New Application</h2>
